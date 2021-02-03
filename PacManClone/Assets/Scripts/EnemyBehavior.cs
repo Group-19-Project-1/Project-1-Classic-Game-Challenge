@@ -6,7 +6,7 @@ public class EnemyBehavior : MonoBehaviour
 {
 
     private Rigidbody2D rb2d;
-    private CircleCollider2D cc2d;
+    private BoxCollider2D cc2d;
 
     private Vector2 direction = Vector2.up; 
 
@@ -17,7 +17,7 @@ public class EnemyBehavior : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        cc2d = GetComponent<CircleCollider2D>();
+        cc2d = GetComponent<BoxCollider2D>();
         rb2d = GetComponent<Rigidbody2D>();
     }
 
