@@ -4,28 +4,38 @@ using UnityEngine;
 
 public class NewEnemyBehavior : MonoBehaviour
 {
-    public Transform[] waypoints;
-    int cur = 0;
 
-    public float speed = 0.3f;
+    public float speed;
 
-    void FixedUpdate()
+    private Transform target;
+
+    void Start()
     {
-        // Waypoint not reached yet? then move closer
-        if (transform.position != waypoints[cur].position)
-        {
-            Vector2 p = Vector2.MoveTowards(transform.position,
-                                            waypoints[cur].position,
-                                            speed);
-            GetComponent<Rigidbody2D>().MovePosition(p);
-        }
-        // Waypoint reached, select next one
-        else cur = (cur + 1) % waypoints.Length;
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-    void OnTriggerEnter2D(Collider2D co)
+    void Update()
     {
-        if (co.name == "Player")
-            Destroy(co.gameObject);
+
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+
+        if (player != null)
+        {
+            player.ChangeHealth(-1);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.name == "Player")
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
+
