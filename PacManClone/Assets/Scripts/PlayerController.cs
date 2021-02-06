@@ -2,9 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public Text winText;
+    public Text GameOverText;
+    bool gameOver = false;
+    
+    
+    
     public float speed = 3.0f;
 
     public int maxHealth = 1;
@@ -27,6 +35,9 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
         count = 0;
         SetCountText();
+
+        winText.text = "";
+        GameOverText.text = "";
     }
     // Update is called once per frame
     void Update()
@@ -35,6 +46,22 @@ public class PlayerController : MonoBehaviour
         vertical = Input.GetAxis("Vertical");
 
         Vector2 move = new Vector2(horizontal, vertical);
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if(gameOver == true)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
+
+        if(Input.GetKeyDown(KeyCode.X))
+        {
+            if(count == 64)
+            {
+                SceneManager.LoadScene("SecondLevel");
+            }
+        }
 
     }
 
@@ -55,16 +82,31 @@ public class PlayerController : MonoBehaviour
             count = count +1;
             SetCountText();
         }
+
     }
 
     public void ChangeHealth(int amount)
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
+
+        if(currentHealth == 0)
+        {
+            GameOverText.text = "Oh no Boy, not you too!... Press R to restart.";
+            speed = 0;
+            gameOver = true;
+
+        }//This "hides" the player while leaving script active.
+
     }
 
     void SetCountText ()
     {
         countText.text = "Count: " + count.ToString();
+        if(count == 64)
+        {
+            winText.text = "Press X to move to the next level.";
+        }
+
     }
 }
