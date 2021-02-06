@@ -55,7 +55,22 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if(gameOver == true)
+            {
+                SceneManager.LoadScene("Menu");
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (gameOver == true)
+            {
+                Application.Quit();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
         {
             if(count == 64)
             {
@@ -92,7 +107,7 @@ public class PlayerController : MonoBehaviour
 
         if(currentHealth == 0)
         {
-            GameOverText.text = "Oh no Boy, not you too!... Press R to restart.";
+            GameOverText.text = "Game Over. R to restart. M for Menu. Q to quit.";
             speed = 0;
             gameOver = true;
 
