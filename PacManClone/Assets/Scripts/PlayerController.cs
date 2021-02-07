@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public Text winText;
     public Text GameOverText;
     bool gameOver = false;
+    bool isActive = false;
 
     Animator animator;
     Vector2 lookDirection = new Vector2(1, 0);
@@ -60,6 +61,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Move Y", lookDirection.y);
         animator.SetFloat("Speed", move.magnitude);
 
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             if(gameOver == true)
@@ -107,9 +109,19 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Pick Up"))
         {
             other.gameObject.SetActive(false);
-            count = count +1;
+            count = count + 1;
             SetCountText();
         }
+
+        if(other.gameObject.CompareTag("Power Up"))
+        {
+            other.gameObject.SetActive(false);
+            count = count + 1;
+            SetCountText();
+            PowerUps();
+
+        }
+
 
     }
 
@@ -137,4 +149,32 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+   void PowerUps()
+    {
+        if ( isActive == false)
+        {
+
+            isActive = true;
+            StartCoroutine(PowerUpTimer(5f));// starts time function
+
+
+        }
+
+
+
+    }
+
+    IEnumerator PowerUpTimer(float waitTime)
+    {
+        speed = speed + 5.0f; // adds speed
+        yield return new WaitForSeconds(waitTime);
+        speed = speed - 5.0f; // removes speed
+        isActive = false;
+    }
+
+
+
+
+
 }

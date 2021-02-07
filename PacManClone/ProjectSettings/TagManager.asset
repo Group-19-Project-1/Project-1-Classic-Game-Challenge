@@ -10,6 +10,7 @@ TagManager:
   - Enemy2
   - Enemy3
   - Enemy4
+  - Power Up
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - Confiner
   - Enemy3
   - Enemy4
-  - 
+  - CameraConfiner
   - 
   - 
   - 
