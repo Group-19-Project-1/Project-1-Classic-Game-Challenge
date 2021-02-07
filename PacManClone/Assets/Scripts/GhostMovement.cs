@@ -50,6 +50,16 @@ public class GhostMovement : MonoBehaviour
             {
                 ChangeDirection();
             }
+
+            if (hit2D.collider.gameObject.CompareTag("Enemy3"))
+            {
+                ChangeDirection();
+            }
+
+            if (hit2D.collider.gameObject.CompareTag("Enemy4"))
+            {
+                ChangeDirection();
+            }
         }
     }
 
