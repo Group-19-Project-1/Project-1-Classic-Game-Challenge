@@ -8,6 +8,8 @@ TagManager:
   - Wall
   - Enemy
   - Enemy2
+  - Enemy3
+  - Enemy4
   layers:
   - Default
   - TransparentFX
@@ -21,8 +23,8 @@ TagManager:
   - Enemy
   - Enemy2
   - Confiner
-  - 
-  - 
+  - Enemy3
+  - Enemy4
   - 
   - 
   - 

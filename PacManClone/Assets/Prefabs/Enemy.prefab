@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 4341684926499419074}
   - component: {fileID: 4341684926499419075}
   - component: {fileID: 3442163519526529032}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Enemy
-  m_TagString: Enemy2
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,10 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  rayDistance: 0.1
+  rayDistance: 1
   rayLayer:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 13568
   currentDir: {x: 0, y: 0}
 --- !u!212 &4341684926499419079
 SpriteRenderer:
