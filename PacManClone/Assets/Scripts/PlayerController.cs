@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
 
         else if (sceneName == "SecondLevel")
         {
-            if (count == 1)
+            if (count == 36)
             {
                 winText.text = "You've done it Boy! You got all your candy back! Press Escape to end the Game!";
             }
