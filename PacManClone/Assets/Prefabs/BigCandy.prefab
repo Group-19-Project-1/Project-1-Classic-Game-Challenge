@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1822539527737879752}
   - component: {fileID: 1822539527737879753}
   - component: {fileID: -358315198217367238}
-  - component: {fileID: -8311927642362987684}
   m_Layer: 0
   m_Name: BigCandy
   m_TagString: Power Up
@@ -110,15 +109,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.696274, y: 4.638502}
   m_EdgeRadius: 0
---- !u!114 &-8311927642362987684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1822539527737879754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 812dab4b369a59848b3f691e27ae8d47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
