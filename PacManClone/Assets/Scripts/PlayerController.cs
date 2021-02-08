@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+
         rigidbody2d = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         count = 0;
@@ -142,19 +144,28 @@ public class PlayerController : MonoBehaviour
 
     void SetCountText ()
     {
+
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
         countText.text = "Count: " + count.ToString();
-        if(count == 64)
+        if (sceneName == "FirstLevel")
         {
-            winText.text = "Press X to move to the next level.";
+            if (count == 64)
+            {
+                winText.text = "Press X to move to the next level.";
+            }
+
         }
 
-
-        if(count == 36)
+        else if (sceneName == "SecondLevel")
         {
-            winText.text = "You've done it Boy! You got all your candy back! Press Escape to end the Game!";
+            if (count == 1)
+            {
+                winText.text = "You've done it Boy! You got all your candy back! Press Escape to end the Game!";
+            }
+
         }
-
-
     }
 
    void PowerUps()
