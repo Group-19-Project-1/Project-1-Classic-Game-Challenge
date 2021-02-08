@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour
 
         if(currentHealth == 0)
         {
-            GameOverText.text = "Game Over. R to restart. M for Menu. Q to quit.";
+            GameOverText.text = "Game Over. R to restart. M for Menu. ESC to quit.";
             speed = 0;
             gameOver = true;
 
