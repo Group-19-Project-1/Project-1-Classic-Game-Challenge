@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pick Up
+  - Wall
+  - Enemy
+  - Enemy2
+  - Enemy3
+  - Enemy4
+  - Power Up
   layers:
   - Default
   - TransparentFX
@@ -14,13 +20,13 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Walls
+  - Enemy
+  - Enemy2
+  - Confiner
+  - Enemy3
+  - Enemy4
+  - CameraConfiner
   - 
   - 
   - 
