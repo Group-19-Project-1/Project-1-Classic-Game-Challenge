@@ -72,14 +72,14 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.M))
         {
-            if(gameOver == true)
+            if(gameOver == true || count == 36)
             {
                 SceneManager.LoadScene("Menu");
             }
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (gameOver == true)
+            if (gameOver == true || count == 36)
             {
                 Application.Quit();
             }
@@ -147,6 +147,13 @@ public class PlayerController : MonoBehaviour
         {
             winText.text = "Press X to move to the next level.";
         }
+
+
+        if(count == 36)
+        {
+            winText.text = "You've done it Boy! You got all your candy back! Press Escape to end the Game!";
+        }
+
 
     }
 
