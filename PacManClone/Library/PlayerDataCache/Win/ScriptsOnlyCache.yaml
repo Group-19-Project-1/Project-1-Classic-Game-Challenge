@@ -1134,4 +1134,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/FirstLevel.unity
   - Assets/Scenes/SecondLevel.unity
-  playerPath: C:/Users/ColeS/Desktop/Alien-Man Build/Pac-Man Remake.exe
+  playerPath: C:/Users/calli/Desktop/Builds/PacManClone/Pac-Man Remake.exe
